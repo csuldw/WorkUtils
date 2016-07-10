@@ -32,7 +32,7 @@ outfile="./out.html"
 
 ### 输出
 
-输出的结果是一张html页面[连接](http://www.csuldw.com/WorkUtils/show/data_visulization.html)，内容如下：
+输出的结果是一张html页面[[连接]](http://www.csuldw.com/WorkUtils/show/data_visulization.html)，内容如下：
 
 
 ![](./data_visulization.png)
