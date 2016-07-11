@@ -78,7 +78,7 @@ def jsonToFormatedDict(json_data, key, valueKey=[], outdict={}):
     return outdict
 
 
-def out_html(onedict, axisTitle, outfile, title=[], echart_js_file=echart_js):
+def out_html(onedict, axisTitle, outfile, title=[], units=[], echart_js_file=echart_js):
     print title
     fo_echart = open(echart_js_file, 'r')
     fr_echart_js = '<script type="text/javascript">' + ''.join(fo_echart.readlines()) + '</script>'
@@ -96,7 +96,7 @@ def out_html(onedict, axisTitle, outfile, title=[], echart_js_file=echart_js):
     for i in range(len(onedict)):
         divId = "main" + str(i)
         optionName = "option" + str(i)
-        option = combine_option(axisTitle, optionName, title[i], onedict[i])
+        option = combine_option(axisTitle, optionName, title[i], onedict[i], units[i])
         optionContent += option
         
     for i in range(len(onedict)):
@@ -122,7 +122,7 @@ data:  {
             'name4': [4, 4, 4, 4, 4, 4, 4]
         }
 '''
-def combine_option(axis, optionName, titleName, data={}, ):
+def combine_option(axis, optionName, titleName, data={}, unit="%" ):
     axisX = ""
     title =  ""
     for elem in axis:
@@ -147,7 +147,7 @@ def combine_option(axis, optionName, titleName, data={}, ):
 		    },
 		    calculable : true,
 		    xAxis : [{type : 'category', boundaryGap : false, data : [""" + axisX.strip(",") + """]}],
-		    yAxis : [{type : 'value'}],
+		    yAxis : [{type : 'value', axisLabel : {formatter: '{value} """ + unit +"""'}}],
 		    series : [""" + series  + """]
 		};"""
     return option
@@ -171,7 +171,7 @@ def test():
             '情感指数': [6.1, 7.2, 6.9, 6.1, 6.5, 6.1, 6.9],
             '魅力指数': [7.9, 8.1, 8.1, 8.3, 8.2, 7.1, 8.9]
         }]
-    out_html(dataList, axisX, title=["张三 - 各项指标", "李四 - 各项指标"], outfile="./out.html")
+    out_html(dataList, axisX, title=["张三 - 各项指标", "李四 - 各项指标"], outfile="./out.html", units=["", ""])
     
 ##################################################################################################
 
