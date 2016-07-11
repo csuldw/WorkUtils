@@ -39,4 +39,8 @@ outfile="./out.html"
 
 
 
+## dataVisual.py
+
+传入多个json，拼凑数据可视化table。
+
 
