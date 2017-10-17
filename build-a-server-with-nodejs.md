@@ -1,4 +1,4 @@
- 默认已经安装好nodejs和npm，下面使用express来搭建web服务器。
+ 默认已经安装好`nodejs`和`npm`，下面使用`express`来搭建web服务器。
 
 #### 安装express插件
 
@@ -20,7 +20,7 @@ cd test-server && npm install
 
 #### 修改端口号
 
-进入bin目录，修改www文件中的port变量(大概是第15行)，将其改为“3333”，如下：
+进入bin目录，修改www文件中的`port`变量(大概是第15行)，将其改为`3333`，如下：
 
 ```
 var port = normalizePort(process.env.PORT || '3333');
