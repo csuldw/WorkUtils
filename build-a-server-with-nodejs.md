@@ -1,4 +1,10 @@
- 默认已经安装好`nodejs`和`npm`，下面使用`express`来搭建web服务器。
+默认已经安装好`nodejs`和`npm`，下面使用`express`来搭建web服务器。
+
+
+```
+nodejs v6.9.3
+npm v3.10.10
+```
 
 #### 安装express插件
 
